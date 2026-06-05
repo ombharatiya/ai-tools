@@ -1,6 +1,6 @@
 # Categories
 
-The domain map for WhichAI. The aim is full coverage of AI tools with no boundary on domain. The map is organized into six groups so it stays easy to scan.
+The domain map for WhichAI. The aim is full coverage of AI tools and apps with no boundary on domain. The map is organized into six groups so it stays easy to scan. Prefer to browse by job instead? See [Professions](../professions/README.md).
 
 **Status legend:** a checked item has at least one full review today. An unchecked item is planned and open for contributions.
 

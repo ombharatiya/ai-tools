@@ -70,13 +70,13 @@ Every review should be useful to at least the first three. We avoid jargon, and 
 
 ## 4. Scope
 
-**What counts as an AI tool here.** A product or project whose core value comes from machine learning or generative models. That includes tools built on large language models, image, audio, and video models, as well as classic machine learning where it is the main feature. A normal app with a small "AI" sticker on it does not qualify on its own.
+**What counts here.** Any product whose core value comes from machine learning or generative models. We use the word "tool" broadly: it covers developer tools and everyday apps alike, from a command line utility to a phone app to a web service. What matters is that AI is central to what it does. A normal app with a token "AI" feature bolted on does not qualify on its own.
 
 **Types we cover.** All of them, marked clearly so the cost picture is honest:
 
 ```mermaid
 flowchart TD
-    T[AI tools we cover] --> O[Open source]
+    T[AI tools and apps we cover] --> O[Open source]
     T --> F[Free or freemium]
     T --> S[Subscription]
     T --> U[Usage based / API]
@@ -89,6 +89,8 @@ flowchart TD
 ```
 
 **Domains we cover.** Every domain, with no boundary. The full taxonomy lives in [Categories](categories.md). The starter set ships with coding assistants, general AI assistants, and image generation, and the structure is built to grow into the rest.
+
+**Professions we cover.** Every profession we can write a useful guide for. Many people do not think in domains, they think in jobs: "I am a teacher, what should I use?" The [Professions](../professions/README.md) section answers that, mapping each role's real tasks to the tools and apps that help. Dedicated pages start with twelve common professions and grow from there.
 
 ## 5. Our promise: the editorial rules
 
@@ -106,13 +108,15 @@ These rules are what make the recommendation trustworthy. They are not optional.
 
 ## 6. How people use it
 
-The core journey, from a task to a decision:
+The core journey, from who you are or what you want to a decision:
 
 ```mermaid
 flowchart TD
-    Start([I have something I want to do]) --> Q{Do I know the category?}
-    Q -- Yes --> Cat[Open the category page]
-    Q -- No --> Browse[Browse the taxonomy or search]
+    Start([Where do I start?]) --> Q{How do I want to look?}
+    Q -- By my profession --> Prof[Open my profession page]
+    Q -- By category --> Cat[Open the category page]
+    Q -- Not sure --> Browse[Browse the taxonomy or search]
+    Prof --> Short
     Browse --> Cat
     Cat --> Short[Read the shortlist with at-a-glance ratings]
     Short --> Review[Open one or more full reviews]
@@ -122,12 +126,13 @@ flowchart TD
     Versus --> Decide([Decide and follow the get started link])
 ```
 
-Two entry points matter most:
+Three entry points matter most:
 
-- **By category:** someone who knows roughly what they want browses the domain and picks from a shortlist.
+- **By profession:** someone who wants to know what their job uses opens their profession page and follows the task-by-task picks.
+- **By category:** someone who knows roughly what kind of tool they want browses the domain and picks from a shortlist.
 - **By use case:** someone with a task ("transcribe interviews", "generate product photos") is pointed to the categories and tools that solve it.
 
-Both should reach a clear verdict in a few clicks, with the reasoning visible.
+All three should reach a clear verdict in a few clicks, with the reasoning visible.
 
 ## 7. Content model
 
@@ -137,6 +142,8 @@ The repository is built from a few simple building blocks. Understanding them ma
 erDiagram
     CATEGORY ||--o{ TOOL : contains
     CATEGORY ||--o{ CATEGORY : "has subcategory"
+    PROFESSION ||--o{ TASK : does
+    TASK }o--o{ TOOL : "helped by"
     USE_CASE }o--o{ TOOL : "solved by"
     TOOL ||--|| REVIEW : "has"
     REVIEW }o--o{ SOURCE : cites
@@ -150,7 +157,8 @@ erDiagram
 | **Review** | The evaluation of a tool: ratings, verdict, facts | inside each tool file |
 | **Comparison** | A head to head of two or more tools | `comparisons/<a-vs-b>.md` |
 | **Source** | A dated citation backing a fact | the Sources section of each review |
-| **Use case** | A task phrased the way a person would say it | category pages map these to tools |
+| **Profession** | A job, with its common tasks and the tools and apps that help | `professions/<profession>.md` |
+| **Use case** | A task phrased the way a person would say it | category and profession pages map these to tools |
 
 ## 8. Evaluation framework
 
@@ -198,8 +206,23 @@ WhichAI/
     categories.md            The full domain taxonomy
     rating-methodology.md    Scoring rubrics and verdict rules
     tool-entry-template.md   The canonical tool file template
+    profession-page-template.md  The canonical profession page template
+  professions/
+    README.md                Index of all professions
+    software-developer.md
+    writer.md
+    marketer.md
+    designer.md
+    teacher.md
+    student.md
+    doctor.md
+    lawyer.md
+    accountant.md
+    sales.md
+    customer-support.md
+    small-business-owner.md
   tools/
-    README.md                Index of all reviewed tools
+    README.md                Index of all reviewed tools and apps
     coding-assistants/
       README.md              Category shortlist and intro
       github-copilot.md
@@ -232,6 +255,7 @@ Design choices:
 - **One file per tool.** Easy to read, easy to diff, easy to review in a pull request.
 - **Front matter on every tool file.** A small block of structured fields at the top (name, vendor, license model, ratings, dates) so the content can power a website later without a rewrite.
 - **Category pages are shortlists.** Each `tools/<category>/README.md` is a curated, ranked starting point, not a dump of links.
+- **Two ways in.** The same reviews are reachable by domain (`tools/`) and by job (`professions/`). Profession pages link to the reviews, they do not duplicate them. A named tool without a review yet is marked as review pending, never given an invented score.
 
 ## 10. Quality bar and governance
 
@@ -266,8 +290,8 @@ This repository is the content foundation. The structured front matter and consi
 <details>
 <summary><strong>Planned phases</strong></summary>
 
-- **Phase 1 (now): foundation.** Spec, taxonomy, methodology, templates, and a starter set of reviews across three categories.
-- **Phase 2: breadth.** Fill the most requested categories. Add more head to head comparisons. Add use case pages that map tasks to tools.
+- **Phase 1 (now): foundation.** Spec, taxonomy, methodology, templates, a starter set of reviews across three categories, and profession pages for twelve common jobs.
+- **Phase 2: breadth.** Fill the most requested categories and professions. Turn the tools named on profession pages into full reviews. Add more head to head comparisons.
 - **Phase 3: trust tooling.** Automated checks that every tool file has required fields, valid front matter, and a fresh Last verified date. A simple freshness dashboard.
 - **Phase 4: presentation.** Generate a browsable website from the same markdown and front matter, with search and filtering by price model, domain, and rating. The content does not change, only how it is presented.
 

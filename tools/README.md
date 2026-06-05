@@ -4,6 +4,8 @@ Every reviewed tool, grouped by category. Each row links to the full review. Rec
 
 Looking for a category that is not here yet? See the full [taxonomy](../docs/categories.md) and [suggest a tool](../.github/ISSUE_TEMPLATE/suggest-a-tool.md).
 
+Prefer to browse by job? See [Professions](../professions/README.md), which maps roles to the tools below.
+
 ## Coding assistants
 
 Help you write, complete, and refactor code. [Category overview](coding-assistants/README.md).

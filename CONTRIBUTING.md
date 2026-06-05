@@ -2,11 +2,12 @@
 
 Thank you for helping. The value of this project is trust, so the standards below matter as much as the content. Read them before you start.
 
-## Three ways to help
+## Four ways to help
 
 1. **Suggest a tool** you want reviewed. [Open an issue](.github/ISSUE_TEMPLATE/suggest-a-tool.md).
 2. **Correct or update** a fact in an existing review. [Open an issue](.github/ISSUE_TEMPLATE/correct-or-update.md) or send a pull request.
 3. **Write a full review.** Use the [tool entry template](docs/tool-entry-template.md) and the [rating methodology](docs/rating-methodology.md).
+4. **Write or improve a profession page.** Use the [profession page template](docs/profession-page-template.md). These map a job's tasks to the tools that help.
 
 ## The non-negotiables
 
@@ -52,6 +53,10 @@ Steps:
 - **Specific beats vague.** "Free tier is 2,000 completions a month" is better than "generous free tier."
 - **Date the volatile stuff.** Prices and model names change. Always say when you checked.
 - **Respect the reader's time.** Lead with the verdict and the best for / not for.
+
+## Writing a profession page
+
+Profession pages map a job to the tools that help. They use coarse price labels (`free`, `freemium`, `paid`, `enterprise`, `open source`), link to full reviews where they exist, and mark anything unreviewed as `(review pending)`. They never carry invented scores. Copy the [profession page template](docs/profession-page-template.md) into `professions/<slug>.md`, then add it to the [professions index](professions/README.md).
 
 ## Review process
 

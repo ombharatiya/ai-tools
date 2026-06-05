@@ -1,10 +1,10 @@
 # WhichAI
 
-**Find the right AI tool for your use case. Honest reviews, side by side comparisons, and clear ratings across every domain.**
+**Find the right AI tool or app for your use case. Honest reviews, side by side comparisons, and clear ratings across every profession and domain.**
 
-WhichAI is a community guide to AI tools. The goal is simple: when you have a task in mind, you should be able to come here and get the kind of recommendation a knowledgeable friend would give you. Not the loudest tool. Not the best marketed one. The one that actually fits what you need.
+WhichAI is a community guide to AI tools and apps. The goal is simple: when you have a task in mind, or you just want to know what your profession is using, you should be able to come here and get the kind of recommendation a knowledgeable friend would give you. Not the loudest product. Not the best marketed one. The one that actually fits what you need.
 
-We cover every domain and every type of tool: open source, free, subscription, and enterprise. No category is off limits, as long as the tool is genuinely an AI tool.
+We cover every kind of AI product: developer tools and everyday apps, open source, free, subscription, and enterprise. You can start two ways, by profession ("I am a teacher, what should I use?") or by domain ("I want an image generator"). No category is off limits, as long as it is genuinely powered by AI.
 
 > Honesty first. We do not take payment for placement or ratings. If a free or open source tool is the better pick, we say so. See [our promise](docs/requirements.md#5-our-promise-the-editorial-rules).
 
@@ -14,24 +14,44 @@ We cover every domain and every type of tool: open source, free, subscription, a
 
 ```mermaid
 flowchart LR
-    A[Start with your use case] --> B{Know the category?}
-    B -- Yes --> C[Open the category]
-    B -- No --> D[Browse all categories]
+    A[Start: your profession or your task] --> B{How do you want to look?}
+    B -- By profession --> P[Open your profession page]
+    B -- By category --> C[Open the category]
+    B -- Not sure --> D[Browse all categories]
+    P --> E
     D --> C
     C --> E[Scan the shortlist and ratings]
-    E --> F[Read the full tool review]
+    E --> F[Read the full review]
     F --> G[Compare your finalists]
     G --> H[Decide and get started]
 ```
 
 | If you want to... | Go to |
 | --- | --- |
+| Find AI tools and apps for your profession | [Professions](professions/README.md) |
 | Understand what this project is and how it works | [Requirements and specification](docs/requirements.md) |
 | Browse tools by domain | [Categories](docs/categories.md) |
 | See how we score and rate tools | [Rating methodology](docs/rating-methodology.md) |
 | Read a tool review | [All tools](tools/README.md) |
 | Compare tools head to head | [Comparisons](comparisons/README.md) |
 | Add or correct a tool | [Contributing](CONTRIBUTING.md) |
+
+---
+
+## Browse by profession
+
+New here? Start with your job. Each profession page maps the real tasks you do to the AI tools and apps that help, with honest notes on what is worth paying for and what to watch out for.
+
+**Dedicated pages:**
+
+| | | |
+| --- | --- | --- |
+| [Software Developer](professions/software-developer.md) | [Writer](professions/writer.md) | [Marketer](professions/marketer.md) |
+| [Designer](professions/designer.md) | [Teacher](professions/teacher.md) | [Student](professions/student.md) |
+| [Doctor and Clinician](professions/doctor.md) | [Lawyer](professions/lawyer.md) | [Accountant](professions/accountant.md) |
+| [Sales Professional](professions/sales.md) | [Customer Support](professions/customer-support.md) | [Small Business Owner](professions/small-business-owner.md) |
+
+More professions are planned. See them all, and suggest your own, in [Professions](professions/README.md).
 
 ---
 
@@ -105,16 +125,22 @@ Anyone can suggest a tool, correct a detail, or write a full review. Start with 
 ```text
 WhichAI/
   README.md                      You are here
-  CONTRIBUTING.md                How to add or correct tools
+  CONTRIBUTING.md                How to add or correct an entry
   CODE_OF_CONDUCT.md             Community standards
   docs/
     README.md                    Docs index
     requirements.md              What this project is, in full
     categories.md                The domain taxonomy
     rating-methodology.md        How scoring and verdicts work
-    tool-entry-template.md       Copy this to add a tool
-  tools/
-    README.md                    Index of every reviewed tool
+    tool-entry-template.md       Copy this to add a tool or app
+    profession-page-template.md  Copy this to add a profession
+  professions/                   Browse by job: tasks mapped to tools
+    README.md                    Index of all professions
+    software-developer.md
+    writer.md
+    ... and ten more
+  tools/                         Reviews of tools and apps, by domain
+    README.md                    Index of every reviewed tool and app
     coding-assistants/
     ai-assistants/
     image-generation/
