@@ -64,6 +64,7 @@ The starter set below has full reviews today. The rest of the map is planned and
 - [Coding assistants](tools/coding-assistants/README.md): GitHub Copilot, Cursor, Aider
 - [General AI assistants](tools/ai-assistants/README.md): ChatGPT, Claude, Gemini
 - [Image generation](tools/image-generation/README.md): Midjourney, DALL-E, Stable Diffusion
+- [Mel – the agentic terminal](https://www.openmel.dev) - The agentic team for coding: a multi-agent, multi-model AI terminal for macOS, Windows, Linux and VS Code. Free with your own API key; Pro from $20/month. Proprietary.
 
 <details>
 <summary><strong>See the full domain map (planned coverage)</strong></summary>
